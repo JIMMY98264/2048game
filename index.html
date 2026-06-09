@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2048 - 简洁实现</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>2048</h1>
+      <div class="score-box">
+        <div>分数</div>
+        <div id="score">0</div>
+      </div>
+      <div class="score-box">
+        <div>最佳</div>
+        <div id="best">0</div>
+      </div>
+      <div class="time-box">
+        <div>耗时</div>
+        <div id="elapsed">00:00</div>
+      </div>
+    </header>
+
+    <div id="game-area">
+      <div id="grid" class="grid"></div>
+    </div>
+
+    <div class="controls">
+      <button id="new-game">新游戏</button>
+      <button id="show-leaderboard">排行榜</button>
+    </div>
+
+    <!-- 游戏结束弹窗 -->
+    <div id="game-over" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="go-title">游戏结束</h2>
+        <p>最终得分：<span id="final-score">0</span></p>
+        <p>首个2048用时：<span id="final-time2048">✖</span></p>
+        <label>输入你的名字保存到排行榜：
+          <input id="player-name" maxlength="20" placeholder="匿名" />
+        </label>
+        <div class="modal-actions">
+          <button id="save-score">保存</button>
+          <button id="restart">再来一局</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 排行榜弹窗 -->
+    <div id="leaderboard" class="modal hidden">
+      <div class="modal-content">
+        <h2>排行榜</h2>
+        <div class="leader-wrap">
+          <table id="leader-table">
+            <thead>
+              <tr><th>排名</th><th>玩家</th><th>分数</th><th>记录时间</th><th>首个2048用时</th><th>来源</th></tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-actions">
+          <button id="clear-leaderboard">清空</button>
+          <button id="close-leaderboard">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

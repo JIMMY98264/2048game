@@ -1,0 +1,12 @@
+{
+  "name": "2048-leaderboard-server",
+  "version": "1.0.0",
+  "description": "Simple leaderboard server for 2048 demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
